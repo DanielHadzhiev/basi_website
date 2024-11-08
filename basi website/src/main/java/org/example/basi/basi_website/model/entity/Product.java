@@ -3,6 +3,7 @@ package org.example.basi.basi_website.model.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.example.basi.basi_website.model.enums.Size;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class Product {
                    String description,
                    double price,
                    String mainImageUrl,
-                   String size) {
+                   Size size) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -50,7 +51,7 @@ public class Product {
 
     @Setter
     @Column(name = "size", nullable = false)
-    private String size;
+    private Size size;
 
     @Setter
     @OneToMany(fetch = FetchType.EAGER,
